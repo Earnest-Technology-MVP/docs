@@ -1,0 +1,71 @@
+# Jekyll configuration for GitHub Pages
+title: Earnest Documentation Hub
+description: Central repository for all company documentation
+theme: jekyll-theme-minimal
+
+# Navigation structure
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "Company"
+    url: "/company/"
+  - title: "Engineering"
+    url: "/engineering/"
+  - title: "Operations"
+    url: "/operations/"
+  - title: "People & Culture"
+    url: "/people/"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Collections for different doc types
+collections:
+  company:
+    output: true
+    permalink: /company/:name
+  engineering:
+    output: true
+    permalink: /engineering/:name
+  operations:
+    output: true
+    permalink: /operations/:name
+  people:
+    output: true
+    permalink: /people/:name
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "company"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "engineering"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "operations"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: "default"
